@@ -1,3 +1,25 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Road.gd" type="Script" id=1]
+[ext_resource path="res://assets/skateboard_1/skateboard-svg/skateboard.svg" type="Texture" id=2]
+[ext_resource path="res://assets/ground/roadline.svg" type="Texture" id=3]
+[ext_resource path="res://assets/ground/road.svg" type="Texture" id=4]
+[ext_resource path="res://scripts/Skateboard.gd" type="Script" id=5]
+[ext_resource path="res://scripts/Roadline.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Skateboard" type="Sprite" parent="."]
+position = Vector2( 1248, 431 )
+texture = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Road" type="Sprite" parent="."]
+position = Vector2( 546, 451 )
+texture = ExtResource( 4 )
+script = ExtResource( 1 )
+
+[node name="Roadline" type="Sprite" parent="Road"]
+position = Vector2( 701, -294 )
+texture = ExtResource( 3 )
+script = ExtResource( 6 )
